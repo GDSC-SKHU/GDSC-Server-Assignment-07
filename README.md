@@ -49,7 +49,10 @@ SecurityContextHolder
 
 SecurityContext
 > -Authentication을 보관하는 역할을 하며, SecurityContext를 통해 Authentication을 저장하거나 꺼내올 수 있음
+<br />
 
-
-
-
+Ref
+> -Spring Security Architecture: https://mangkyu.tistory.com/76  
+  -Spring Security Architecture: https://mangkyu.tistory.com/77  
+  -Spring Security Architecture: https://dev-coco.tistory.com/174  
+  -SpringContextHolder: https://wildeveloperetrain.tistory.com/163
