@@ -1,13 +1,13 @@
-package com.example.gdsc07;
+package com.example.security2;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Gdsc07ApplicationTests {
+class Security2ApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }
