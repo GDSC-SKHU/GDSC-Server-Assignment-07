@@ -1,6 +1,6 @@
-package com.example.gdsc07.service;
+package com.example.security2.service;
 
-import com.example.gdsc07.repository.UserRepository;
+import com.example.security2.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,14 +14,12 @@ import org.springframework.web.server.ResponseStatusException;
 public class AuthService implements UserDetailsService {
     private final UserRepository userRepository;
 
-    // DB에서 유저정보를 불러옴
-    // Custom한 UserDetails 클래스를 리턴
+
+    // user가 없으면 NOT_FOUND 예외처리
+    // 있으면 DB에서 username 찾아서 user 정보 return
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
-        // userRepository에서 사용자를 찾는 findByUsername 메소드 사용
-        // 없으면 NOT_FOUND 오류 발생
         return userRepository.findByUsername(username)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "해당 username이 없음"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 }
